@@ -1,0 +1,19 @@
+[package]
+name = "bare_metal"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+
+
+[profile.dev]
+panic = "abort"
+
+[profile.release]
+panic = "abort"
+
+
+[[bin]]
+name = "bare_metal"
+test = false
+bench = false

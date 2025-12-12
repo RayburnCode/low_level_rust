@@ -53,3 +53,21 @@ cargo build --target x86_64-bare_metal.json
 ```rust
 cargo build --target arm-bare_metal.json
 ```
+
+## Print To Screen
+
+use VGA Text mode
+
+Cargo Crate:
+bootloader = "0.11.13"
+"An experimental x86_64 bootloader that works on both BIOS and UEFI systems."
+
+The bootimage tool performs the following steps behind the scenes:
+
+1. It compiles our kernel to an ELF file.
+2. It compiles the bootloader dependency as a standalone executable.
+3. It links the bytes of the kernel ELF file to the bootloader.
+
+```qemu
+ qemu-system-x86_64 -drive format=raw,file=target/x86_64-bare_metal/debug/bootimage-bare_metal.bin
+```

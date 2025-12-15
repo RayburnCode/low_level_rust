@@ -1,10 +1,10 @@
 #![no_std]
 #![no_main]
 #![feature(custom_test_frameworks)]
-#![test_runner(blog_os::test_runner)]
+#![test_runner(bare_metal::test_runner)]
 #![reexport_test_harness_main = "test_main"]
 
-use blog_os::println;
+use bare_metal::println;
 use core::panic::PanicInfo;
 
 #[unsafe(no_mangle)]
@@ -28,7 +28,7 @@ fn panic(info: &PanicInfo) -> ! {
 #[cfg(test)]
 #[panic_handler]
 fn panic(info: &PanicInfo) -> ! {
-    blog_os::test_panic_handler(info)
+    bare_metal::test_panic_handler(info)
 }
 
 #[test_case]

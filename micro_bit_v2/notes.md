@@ -2,6 +2,8 @@
 
 # Notes
 
+rust-objdump?
+
 [MicroBit](https://tech.microbit.org)
 [Probe-rs](https://probe.rs)
 Learn: Rust genetic, trait and closures
@@ -80,4 +82,15 @@ pub trait Summary {
 ```bash
 cargo build
 greadelf -- -h target/thumbv7em-none-eabihf/debug/micro_bit_v2
+```
+
+```rust
+cargo readobj -- --file-headers
+cargo embed
+```
+
+Debug:
+
+```rust
+gdb target/thumbv7em-none-eabihf/debug/micro_bit_v2
 ```

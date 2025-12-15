@@ -13,8 +13,8 @@ no threads, files, heap memory, the network, random numbers, standard output,
 rustc --version --verbose
 ```
 
-2. Must compile for a different environment with no underlying operating system
-   ex:
+Must compile for a different environment with no underlying operating system
+ex:
 
 ```rust
 rustup target add thumbv7em-none-eabihf

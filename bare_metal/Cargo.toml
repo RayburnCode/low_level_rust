@@ -21,7 +21,7 @@ panic = "abort"
 
 [[bin]]
 name = "bare_metal"
-test = false
+test = true
 bench = false
 
 

@@ -3,6 +3,11 @@
 # Notes
 
 rust-objdump?
+probe-rs vs QMEU vd gbd
+
+embassy = Async runtime
+probe-rs: Rust-based debugging toolchain that replaces OpenOCD/GDB
+QENU: emulator and virtualizer that lets you run operating systems and programs for one hardware architecture (like ARM) on a different one.
 
 [MicroBit](https://tech.microbit.org)
 [Probe-rs](https://probe.rs)
@@ -93,4 +98,8 @@ Debug:
 
 ```rust
 gdb target/thumbv7em-none-eabihf/debug/micro_bit_v2
+```
+
+```gbd
+layout src
 ```

@@ -103,3 +103,29 @@ gdb target/thumbv7em-none-eabihf/debug/micro_bit_v2
 ```gbd
 layout src
 ```
+
+#### Polling
+
+Method of repeatedly checking inputs in a loop.
+Once vs Repeated.
+
+polling both Button A and Button B:
+
+````rust
+    loop {
+        let on_pressed = button_a.is_low().unwrap();
+        let off_pressed = button_b.is_low().unwrap();
+        match (on_pressed, off_pressed) {
+            // Stay in current state until something is pressed.
+            (false, false) => (),
+            // Change to on state.
+            (true, false) => row1.set_high().unwrap(),
+            // Change to off state.
+            (false, true) => row1.set_low().unwrap(),
+            // Stay in current state until something is released.
+            (true, true) => (),
+        }
+        timer.delay_ms(10_u32);
+    }
+    ```
+````

@@ -104,7 +104,7 @@ gdb target/thumbv7em-none-eabihf/debug/micro_bit_v2
 layout src
 ```
 
-#### Polling
+### Polling
 
 Method of repeatedly checking inputs in a loop.
 Once vs Repeated.
@@ -129,3 +129,7 @@ polling both Button A and Button B:
     }
     ```
 ````
+
+### Superloops
+
+- main control loop that does a bunch of things in sequence
